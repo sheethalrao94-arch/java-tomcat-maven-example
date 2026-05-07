@@ -1,0 +1,7 @@
+version: '3'
+services:
+  tomcat-app:
+    build: .
+    container_name: java-tomcat-container
+    ports:
+      - "9091:8080"
