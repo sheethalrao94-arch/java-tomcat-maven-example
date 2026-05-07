@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: java-tomcat-deployment
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: java-tomcat-app
+
+  template:
+
+    metadata:
+      labels:
+        app: java-tomcat-app
+
+    spec:
+
+      containers:
+      - name: java-tomcat-container
+
+        image: sheethalrao94/java-tomcat-app:latest
+
+        ports:
+        - containerPort: 8080
